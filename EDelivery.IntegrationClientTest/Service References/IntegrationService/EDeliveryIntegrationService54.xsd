@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://edelivery.egov.bg/services/integration" elementFormDefault="qualified" targetNamespace="https://edelivery.egov.bg/services/integration" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://edelivery.egov.bg/Services/EDeliveryIntegrationService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/EDelivery.Common.DataContracts.ESubject" />
+  <xs:import schemaLocation="https://edelivery.egov.bg/Services/EDeliveryIntegrationService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EDelivery.Common.Enums" />
+  <xs:import schemaLocation="https://edelivery.egov.bg/Services/EDeliveryIntegrationService.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/EDelivery.Common.DataContracts" />
+  <xs:element name="GetRegisteredInstitutions">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRegisteredInstitutionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/EDelivery.Common.DataContracts.ESubject" minOccurs="0" name="GetRegisteredInstitutionsResult" nillable="true" type="q1:ArrayOfDcInstitutionInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendElectronicDocument">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="subject" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="docBytes" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="docNameWithExtension" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="docRegNumber" nillable="true" type="xs:string" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EDelivery.Common.Enums" minOccurs="0" name="receiverType" type="q2:eProfileType" />
+        <xs:element minOccurs="0" name="receiverUniqueIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="receiverPhone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="receiverEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serviceOID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="operatorEGN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendElectronicDocumentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendElectronicDocumentResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/EDelivery.Common.DataContracts" minOccurs="0" name="message" nillable="true" type="q3:DcMessageDetails" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EDelivery.Common.Enums" minOccurs="0" name="receiverType" type="q4:eProfileType" />
+        <xs:element minOccurs="0" name="receiverUniqueIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="receiverPhone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="receiverEmail" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="serviceOID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="operatorEGN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendMessageResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentDocumentStatusByRegNum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="documentRegistrationNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="operatorEGN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentDocumentStatusByRegNumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/EDelivery.Common.DataContracts" minOccurs="0" name="GetSentDocumentStatusByRegNumResult" nillable="true" type="q5:DcMessageDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentDocumentContentByRegNum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="documentRegistrationNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="operatorEGN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentDocumentContentByRegNumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/EDelivery.Common.DataContracts" minOccurs="0" name="GetSentDocumentContentByRegNumResult" nillable="true" type="q6:DcDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentDocumentsContent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageId" type="xs:int" />
+        <xs:element minOccurs="0" name="operatorEGN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentDocumentsContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/EDelivery.Common.DataContracts" minOccurs="0" name="GetSentDocumentsContentResult" nillable="true" type="q7:ArrayOfDcDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentDocumentContent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="documentId" type="xs:int" />
+        <xs:element minOccurs="0" name="operatorEGN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentDocumentContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/EDelivery.Common.DataContracts" minOccurs="0" name="GetSentDocumentContentResult" nillable="true" type="q8:DcDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentMessageStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageId" type="xs:int" />
+        <xs:element minOccurs="0" name="operatorEGN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentMessageStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/EDelivery.Common.DataContracts" minOccurs="0" name="GetSentMessageStatusResult" nillable="true" type="q9:DcMessageDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentMessagesList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="operatorEGN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentMessagesListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/EDelivery.Common.DataContracts" minOccurs="0" name="GetSentMessagesListResult" nillable="true" type="q10:ArrayOfDcMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentMessagesListPaged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="pageNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="operatorEGN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSentMessagesListPagedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/EDelivery.Common.DataContracts" minOccurs="0" name="GetSentMessagesListPagedResult" nillable="true" type="q11:DcPartialListOfDcMessageHR29gRRX" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReceivedMessagesList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="onlyNew" type="xs:boolean" />
+        <xs:element minOccurs="0" name="operatorEGN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReceivedMessagesListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/EDelivery.Common.DataContracts" minOccurs="0" name="GetReceivedMessagesListResult" nillable="true" type="q12:ArrayOfDcMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReceivedMessagesListPaged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="onlyNew" type="xs:boolean" />
+        <xs:element minOccurs="0" name="pageNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+        <xs:element minOccurs="0" name="operatorEGN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReceivedMessagesListPagedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/EDelivery.Common.DataContracts" minOccurs="0" name="GetReceivedMessagesListPagedResult" nillable="true" type="q13:DcPartialListOfDcMessageHR29gRRX" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReceivedMessageContent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="messageId" type="xs:int" />
+        <xs:element minOccurs="0" name="operatorEGN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReceivedMessageContentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/EDelivery.Common.DataContracts" minOccurs="0" name="GetReceivedMessageContentResult" nillable="true" type="q14:DcMessageDetails" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

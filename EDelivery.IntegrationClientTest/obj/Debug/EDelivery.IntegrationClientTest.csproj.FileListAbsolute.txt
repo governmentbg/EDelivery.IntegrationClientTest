@@ -1,0 +1,6 @@
+D:\Projects\E-Delivery\Src\EDelivery\EDelivery.IntegrationClientTest\EDelivery.IntegrationClientTest\bin\Debug\EDelivery.IntegrationClientTest.exe.config
+D:\Projects\E-Delivery\Src\EDelivery\EDelivery.IntegrationClientTest\EDelivery.IntegrationClientTest\obj\Debug\EDelivery.IntegrationClientTest.csprojResolveAssemblyReference.cache
+D:\Projects\E-Delivery\Src\EDelivery\EDelivery.IntegrationClientTest\EDelivery.IntegrationClientTest\bin\Debug\EDelivery.IntegrationClientTest.exe
+D:\Projects\E-Delivery\Src\EDelivery\EDelivery.IntegrationClientTest\EDelivery.IntegrationClientTest\bin\Debug\EDelivery.IntegrationClientTest.pdb
+D:\Projects\E-Delivery\Src\EDelivery\EDelivery.IntegrationClientTest\EDelivery.IntegrationClientTest\obj\Debug\EDelivery.IntegrationClientTest.exe
+D:\Projects\E-Delivery\Src\EDelivery\EDelivery.IntegrationClientTest\EDelivery.IntegrationClientTest\obj\Debug\EDelivery.IntegrationClientTest.pdb

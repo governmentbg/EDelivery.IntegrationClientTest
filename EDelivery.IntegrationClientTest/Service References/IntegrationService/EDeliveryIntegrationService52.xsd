@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EDelivery.Common.Enums" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EDelivery.Common.Enums" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="eProfileType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Person" />
+      <xs:enumeration value="LegalPerson" />
+      <xs:enumeration value="Institution" />
+      <xs:enumeration value="Administrator" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="eProfileType" nillable="true" type="tns:eProfileType" />
+  <xs:simpleType name="eVerificationInfoType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Certificate" />
+      <xs:enumeration value="EID" />
+      <xs:enumeration value="AdministrativeAct" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="eVerificationInfoType" nillable="true" type="tns:eVerificationInfoType" />
+</xs:schema>

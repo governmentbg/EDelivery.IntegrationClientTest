@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/EDelivery.Common.DataContracts.ESubject" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EDelivery.Common.DataContracts.ESubject" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://edelivery.egov.bg/Services/EDeliveryIntegrationService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="https://edelivery.egov.bg/Services/EDeliveryIntegrationService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/EDelivery.Common.Enums" />
+  <xs:complexType name="ArrayOfDcInstitutionInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcInstitutionInfo" nillable="true" type="tns:DcInstitutionInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcInstitutionInfo" nillable="true" type="tns:ArrayOfDcInstitutionInfo" />
+  <xs:complexType name="DcInstitutionInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DcSubjectInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="HeadInstitution" nillable="true" type="tns:DcSubjectPublicInfo" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="SubInstitutions" nillable="true" type="tns:ArrayOfDcSubjectPublicInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DcInstitutionInfo" nillable="true" type="tns:DcInstitutionInfo" />
+  <xs:complexType name="DcSubjectInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DcSubjectPublicInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="tns:DcAddress" />
+          <xs:element minOccurs="0" name="UniqueSubjectIdentifier" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VerificationInfo" nillable="true" type="xs:anyType" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DcSubjectInfo" nillable="true" type="tns:DcSubjectInfo" />
+  <xs:complexType name="DcSubjectPublicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ElectronicSubjectId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ElectronicSubjectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsActivated" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/EDelivery.Common.Enums" minOccurs="0" name="ProfileType" type="q1:eProfileType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcSubjectPublicInfo" nillable="true" type="tns:DcSubjectPublicInfo" />
+  <xs:complexType name="DcPersonInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DcSubjectInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BirthDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="DateOfDeath" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DcPersonInfo" nillable="true" type="tns:DcPersonInfo" />
+  <xs:complexType name="DcElectronicIdentityInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateOfBirth" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EGN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FamilyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FamilyNameLat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GivenName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GivenNameLat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MiddleName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MiddleNameLat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhoneNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Spin" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/EDelivery.Common.Enums" minOccurs="0" name="VerificationInfoType" type="q2:eVerificationInfoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcElectronicIdentityInfo" nillable="true" type="tns:DcElectronicIdentityInfo" />
+  <xs:complexType name="DcAdministrativeActInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByInstitution" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedOnDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/EDelivery.Common.Enums" minOccurs="0" name="VerificationInfoType" type="q3:eVerificationInfoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcAdministrativeActInfo" nillable="true" type="tns:DcAdministrativeActInfo" />
+  <xs:complexType name="DcCertificateInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsValid" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Issuer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidFrom" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ValidTo" type="xs:dateTime" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/EDelivery.Common.Enums" minOccurs="0" name="VerificationInfoType" type="q4:eVerificationInfoType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcCertificateInfo" nillable="true" type="tns:DcCertificateInfo" />
+  <xs:complexType name="DcLegalPersonInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:DcSubjectInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CompanyName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DateOutOfForce" nillable="true" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="InForceDate" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="RegisteredBy" nillable="true" type="tns:DcPersonInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DcLegalPersonInfo" nillable="true" type="tns:DcLegalPersonInfo" />
+  <xs:complexType name="DcAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryIso2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DcAddress" nillable="true" type="tns:DcAddress" />
+  <xs:complexType name="ArrayOfDcSubjectPublicInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DcSubjectPublicInfo" nillable="true" type="tns:DcSubjectPublicInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDcSubjectPublicInfo" nillable="true" type="tns:ArrayOfDcSubjectPublicInfo" />
+</xs:schema>
