@@ -1,6 +1,6 @@
 # EDelivery.IntegrationClientTest
 
-Относно описание на уеб услугата за интеграция: https://github.com/governmentbg/EDelivery.IntegrationClientTest/blob/master/1.%20Prilozhenie-eDelivery%20Service.docx
+Oписание на уеб услугата за интеграция: https://e-gov.bg/upload/5105/1.+Prilozhenie-eDelivery+Service.docx
 
 Advantages:
 Authentication of the time of sending of documents and messages by the sender;
