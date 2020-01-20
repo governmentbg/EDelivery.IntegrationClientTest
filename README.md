@@ -31,7 +31,7 @@
 		- [GetReceivedMessageContent](#GetReceivedMessageContent)
 		- [CheckPersonHasRegistration](#CheckPersonHasRegistration)
 		- [GetSubjectInfo](#GetSubjectInfo)
-	- [Описание на използваните обекти за данни (data objects)](##описание-на-използваните-обекти-за-данни-data-objects)
+	- [Описание на използваните обекти за данни (data objects)](#описание-на-използваните-обекти-за-данни-data-objects)
 		- [DcMessage](#DcMessage)
 		- [DcMessageDetails](#DcMessageDetails)
 		- [DcDocument](#DcDocument)
